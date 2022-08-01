@@ -1,0 +1,20 @@
+name: Publish to ghcr.io
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@v4
+      with:
+        name: omdv/tailscale-k8s-sidecar
+        username: ${{ github.actor }}
+        password: ${{ secrets.CR_TOKEN }}
+        registry: ghcr.io
+        snapshot: true
