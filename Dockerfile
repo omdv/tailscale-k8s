@@ -1,6 +1,6 @@
 FROM alpine:latest
 WORKDIR /app
-ENV TSFILE=tailscale_1.26.1_amd64.tgz
+ENV TSFILE=tailscale_1.28.0_amd64.tgz
 RUN wget https://pkgs.tailscale.com/stable/${TSFILE} && tar xzf ${TSFILE} --strip-components=1
 COPY . ./
 

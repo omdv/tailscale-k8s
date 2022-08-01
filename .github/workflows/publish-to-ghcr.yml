@@ -14,7 +14,7 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@v4
       with:
         name: omdv/tailscale-k8s-sidecar
-        username: ${{ github.repository_owner }}
+        username: ${{ github.actor }}
         password: ${{ secrets.CR_TOKEN }}
         registry: ghcr.io
         snapshot: true
